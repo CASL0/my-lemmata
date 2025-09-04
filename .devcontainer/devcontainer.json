@@ -1,0 +1,18 @@
+{
+  "name": "My Lemmata",
+  "dockerFile": "Dockerfile",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=delegated",
+  "workspaceFolder": "/workspaces",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "james-yu.latex-workshop",
+        "vivaxy.vscode-conventional-commits"
+      ],
+      "settings": {
+        "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)"
+      }
+    }
+  }
+}
