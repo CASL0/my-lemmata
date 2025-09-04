@@ -8,13 +8,18 @@
       "extensions": [
         "streetsidesoftware.code-spell-checker",
         "james-yu.latex-workshop",
-        "vivaxy.vscode-conventional-commits"
+        "vivaxy.vscode-conventional-commits",
+        "esbenp.prettier-vscode"
       ],
       "settings": {
         "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
         "latex-workshop.formatting.latex": "tex-fmt",
         "[tex]": {
           "editor.defaultFormatter": "James-Yu.latex-workshop",
+          "editor.formatOnSave": true
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
         }
       }
