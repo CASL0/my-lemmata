@@ -11,7 +11,12 @@
         "vivaxy.vscode-conventional-commits"
       ],
       "settings": {
-        "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)"
+        "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
+        "latex-workshop.formatting.latex": "tex-fmt",
+        "[tex]": {
+          "editor.defaultFormatter": "James-Yu.latex-workshop",
+          "editor.formatOnSave": true
+        }
       }
     }
   }
