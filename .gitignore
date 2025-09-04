@@ -324,3 +324,26 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# Created by https://www.toptal.com/developers/gitignore/api/venv
+# Edit at https://www.toptal.com/developers/gitignore?templates=venv
+
+### venv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+
+# End of https://www.toptal.com/developers/gitignore/api/venv
+
+venv
+.env
+env
