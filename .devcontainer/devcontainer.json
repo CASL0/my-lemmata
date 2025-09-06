@@ -9,7 +9,8 @@
         "streetsidesoftware.code-spell-checker",
         "james-yu.latex-workshop",
         "vivaxy.vscode-conventional-commits",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "oderwat.indent-rainbow"
       ],
       "settings": {
         "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
