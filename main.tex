@@ -108,4 +108,30 @@
   \end{proof}
 \end{lemma}
 
+\section{無限小解析}
+
+\begin{lemma}[3.22]
+  fを単調減少関数とし、任意の$n \in \mathbb{N}$に対して
+
+  \[
+    \int_{n}^{n+1}f(x)\,dx \leq f(n)
+  \]
+
+  が成り立つ
+
+  \begin{proof}
+    $f$の単調減少性より
+    \[
+      x \geq n \Rightarrow f(x) \leq f(n)
+    \]
+    が成り立つので、積分の単調性より
+
+    \[
+      \int_{n}^{n+1} f(x) \,dx \leq \int_{n}^{n+1} f(n) \,dx
+    \]
+    \[
+      \therefore \int_{n}^{n+1}f(x)\,dx \leq f(n)
+    \]
+  \end{proof}
+\end{lemma}
 \end{document}
