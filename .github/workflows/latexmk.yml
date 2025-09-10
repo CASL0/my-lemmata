@@ -1,0 +1,20 @@
+name: Build PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: latexmk
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Generate PDF document
+        uses: hspaans/latexmk-action@v2.1.0
+        with:
+          format: pdf
+          filename: main.tex
