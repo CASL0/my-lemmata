@@ -15,6 +15,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         python3-pip \
         python3-venv \
         git \
+        git-lfs \
         tex-fmt
 
 WORKDIR /workspaces
