@@ -11,6 +11,9 @@ jobs:
   build:
     name: latexmk
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -20,3 +23,13 @@ jobs:
         with:
           format: pdf
           filename: main.tex
+
+      - name: Create Pull Request with PDF
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: :bento: update PDF after TeX changes"
+          branch: update-pdf
+          title: "Update PDF"
+          add-paths: |
+            main.pdf
+          labels: automerge
