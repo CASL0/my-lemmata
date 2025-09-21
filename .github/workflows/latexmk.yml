@@ -1,0 +1,40 @@
+name: Build PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'main.tex'
+
+jobs:
+  build:
+    name: latexmk
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Generate PDF document
+        uses: hspaans/latexmk-action@v2.1.1
+        with:
+          format: pdf
+          filename: main.tex
+
+      - name: Create Pull Request with PDF
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: :bento: update PDF after TeX changes"
+          branch: update-pdf
+          title: "Update PDF"
+          add-paths: |
+            main.pdf
+          labels: automerge
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --merge --auto "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
