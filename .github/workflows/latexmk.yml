@@ -25,6 +25,7 @@ jobs:
           filename: main.tex
 
       - name: Create Pull Request with PDF
+        id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "chore: :bento: update PDF after TeX changes"
@@ -33,3 +34,7 @@ jobs:
           add-paths: |
             main.pdf
           labels: automerge
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --merge --auto "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
