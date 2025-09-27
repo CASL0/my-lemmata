@@ -35,6 +35,6 @@ jobs:
             main.pdf
           labels: automerge
       - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto "${{ steps.cpr.outputs.pull-request-number }}"
+        run: gh pr merge --merge --auto --delete-branch "${{ steps.cpr.outputs.pull-request-number }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
