@@ -134,4 +134,55 @@
     \]
   \end{proof}
 \end{lemma}
+
+\chapter{線型代数の基礎、永田}
+
+\section{行列と一次変換}
+
+\begin{lemma}[1.5.3]
+  $V$をベクトル空間、$U_1,\,U_2$を$V$上の部分空間とする
+
+  和空間$U_1+U_2$は$U_1\cup U_2$を含む最小の部分空間となる
+
+  \begin{proof}
+    $U_1\cup U_2 \subset U_1+U_2$を示す
+
+    $x\in U_1\cup U_2$を任意にとる
+
+    \[
+      x\in U_1\lor x\in U_2
+    \]
+    を満たすので
+    \[
+      U_1\ni x + 0 \in U_2\lor U_1\ni 0 + x\in U_2
+    \]
+    \[
+      \therefore x\in U_1 + U_2
+    \]
+    $x$は任意なので
+    \[
+      \therefore U_1\cup U_2 \subset U_1+U_2
+    \]
+
+    次に$U_1\cup U_2$を含む最小の部分空間であることを示す\\
+    $W \subset V$を部分空間とすると、$U_1+U_2\subset W$を示せばよい\\
+    $x\in U_1+U_2$を任意にとる\\
+    $x=x_1+x_2\,(x_1\in U_1,\,x_2\in U_2)$とできる\\
+    一方で、
+    \[
+      x_1\in U_1 \subset U_1\cup U_2\subset W
+    \]
+    同様に
+    \[
+      x_2\in U_2 \subset U_1\cup U_2\subset W
+    \]
+    \[
+      \therefore x = x_1+x_2\in W
+    \]
+    $x$は任意なので
+    \[
+      \therefore U_1+U_2\subset W
+    \]
+  \end{proof}
+\end{lemma}
 \end{document}
