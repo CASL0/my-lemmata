@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "labels": ["dependencies"],
+  "automerge": true,
+  "packageRules": [
+    {
+      "groupName": "dockerfile",
+      "matchPackagePatterns": ["dockerfile"],
+      "rebaseWhen": "conflicted",
+      "automerge": false
+    }
   ]
 }
