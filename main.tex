@@ -2,6 +2,7 @@
 \usepackage{hyperref}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{amsmath}
 
 \newtheorem*{lemma}{補題}
 
@@ -183,6 +184,41 @@
     \[
       \therefore U_1+U_2\subset W
     \]
+  \end{proof}
+\end{lemma}
+
+\chapter{これなら分かる最適化数学、金谷}
+
+\section{数学的準備}
+\begin{lemma}[1.6]
+  $f: \mathbb{R}^n \rightarrow \mathbb{R} $を以下のように定義する。
+  \[
+    f(x) = \sum_{i = 1}^{n}\sum_{j = 1}^{n} a_{ij}x_ix_j
+  \]
+  ここで
+  \[
+    a_{ij} = a_{ji} \, (\forall i,j)
+  \]
+  とする。
+  この時、$f$の偏導関数は
+  \[
+    \frac{\partial f}{\partial x_i} = 2\sum_{j = 1}^{n} a_{ij} x_j
+  \]
+  となる。
+  \begin{proof}
+    \begin{align*}
+      \frac{\partial f}{\partial x_k} &= \frac{\partial}{\partial
+      x_k}\sum_{i = 1}^{n}\sum_{j = 1}^{n} a_{ij}x_ix_j \\
+      &= \sum_{i = 1}^{n}\sum_{j = 1}^{n} \frac{\partial}{\partial
+      x_k}a_{ij}x_ix_j \\
+      \text{(積の微分より)} &= \sum_{i = 1}^{n}\sum_{j = 1}^{n} \left(
+        a_{ij}\frac{\partial x_i}{\partial x_k}x_j +
+      a_{ij}x_i\frac{\partial x_j}{\partial x_k} \right) \\
+      &= \sum_{i = 1}^{n}\sum_{j = 1}^{n} (a_{ij}\delta_{ik}x_j +
+      a_{ij}x_i\delta_{jk}) \\
+      &= \sum_{j = 1}^{n} a_{kj}x_j + \sum_{i = 1}^{n} a_{ik}x_i \\
+      (a_{ik} = a_{ki}\text{より}) &= 2\sum_{i = 1}^{n} a_{ki}x_i
+    \end{align*}
   \end{proof}
 \end{lemma}
 \end{document}
