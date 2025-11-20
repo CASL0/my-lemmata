@@ -11,7 +11,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Run tex-fmt
         uses: grayespinoza/tex-fmt-action@v0.9.3
