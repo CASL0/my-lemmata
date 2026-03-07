@@ -10,7 +10,8 @@
         "james-yu.latex-workshop",
         "vivaxy.vscode-conventional-commits",
         "esbenp.prettier-vscode",
-        "oderwat.indent-rainbow"
+        "oderwat.indent-rainbow",
+        "GitHub.copilot"
       ],
       "settings": {
         "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
@@ -22,7 +23,8 @@
         "[markdown]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
-        }
+        },
+        "chat.mcp.gallery.enabled": true
       }
     }
   }
