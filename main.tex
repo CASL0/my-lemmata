@@ -98,10 +98,11 @@
     \[n \geq n_2 \Rightarrow |b_n - a| < \varepsilon\]
 
     が成り立つ。
-    $n_0 := \max(n_1, n_2)$とすると、$n \geq n_0 \Rightarrow |c_n - a| < \varepsilon$
+    $n_0 := 2\max(n_1, n_2) - 1$とすると、$n \geq n_0 \Rightarrow |c_n - a| < \varepsilon$
 
-    $\because n$が奇数の時は$|c_n - a| = |a_n - a| < \varepsilon$、
-    $n$が偶数の時は$|c_n - a| = |b_n - a| < \varepsilon$
+    $\because$ $c_{2k-1} = a_k$、$c_{2k} = b_k$（$k \in \mathbb{N}$）の対応より、
+    $n \geq n_0$ が奇数 $n = 2k-1$ の時は $k \geq n_1$ より $|c_n - a| = |a_k - a| < \varepsilon$、
+    $n$ が偶数 $n = 2k$ の時は $k \geq n_2$ より $|c_n - a| = |b_k - a| < \varepsilon$
 
     (必要性)$\lim_{n \to \infty}c_n = c$とすると、補題1.34より部分列も$c$に収束する
 
