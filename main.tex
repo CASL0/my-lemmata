@@ -33,6 +33,38 @@
 
 \section{集合と関数}
 
+\begin{lemma}[1.11]
+  数列$\{a_n\}$と$\{b_n\}$について、
+  \[\lim_{n \to \infty} a_n = a, \quad \lim_{n \to \infty} b_n = b\]
+  このとき、
+  \[\forall n \in \mathbb{N}: \quad a_n \leq b_n \Rightarrow a \leq b\]
+
+  \begin{proof}
+    $a > b$と仮定する。
+
+    \[\varepsilon := \dfrac{a-b}{2} > 0\]
+
+    $\lim_{n \to \infty} a_n = a$より、
+    \[\exists n_1 \in \mathbb{N}: \quad n \geq n_1 \Rightarrow
+    |a_n - a| < \varepsilon\]
+    したがって、
+    \[a_n > a - \varepsilon = \dfrac{a+b}{2}\]
+
+    $\lim_{n \to \infty} b_n = b$より、
+    \[\exists n_2 \in \mathbb{N}: \quad n \geq n_2 \Rightarrow
+    |b_n - b| < \varepsilon\]
+    したがって、
+    \[b_n < b + \varepsilon = \dfrac{a+b}{2}\]
+
+    $n_0 := \max(n_1, n_2)$とすると、
+    \[n \geq n_0 \Rightarrow a_n > \dfrac{a+b}{2} > b_n\]
+
+    これは仮定$a_n \leq b_n$に矛盾する。
+
+    \[\therefore \quad a \leq b\]
+  \end{proof}
+\end{lemma}
+
 \begin{lemma}[1.30]
   集合A,Bおよび関数fに対して
 
