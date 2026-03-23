@@ -1,0 +1,43 @@
+name: Rulesync Generate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".rulesync/**"
+      - "rulesync.jsonc"
+
+jobs:
+  generate:
+    name: rulesync generate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - name: Run rulesync generate
+        run: npx --yes rulesync generate
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore: :bento: regenerate AI tool configs"
+          branch: update-rulesync
+          title: "Update AI tool configs via rulesync"
+          labels: automerge
+
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-number != ''
+        run: gh pr merge --merge --auto --delete-branch "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
