@@ -1,3 +1,10 @@
+Please also reference the following rules as needed. The list below is provided in TOON format, and `@` stands for the project root directory.
+
+rules[1]:
+  - path: @.codex/memories/math-proof.md
+    description: Mathematical proof review and validation criteria
+    applyTo[1]: **/*.tex
+
 # AI コーディングエージェント指示
 
 ## プロジェクト概要
