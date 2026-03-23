@@ -16,6 +16,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         python3-venv \
         git \
         git-lfs \
-        tex-fmt
+        tex-fmt \
+        npm
+
+RUN npm install -g rulesync
 
 WORKDIR /workspaces
