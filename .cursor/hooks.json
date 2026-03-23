@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "command": "pre-commit run --all-files",
+        "matcher": "Write|Edit"
+      }
+    ]
+  }
+}
