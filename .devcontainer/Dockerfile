@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM debian:trixie-20260406
+FROM debian:trixie-20260421
 
 LABEL org.opencontainers.image.source="https://github.com/CASL0/my-lemmata"
 LABEL org.opencontainers.image.licenses="MIT"
